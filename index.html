@@ -1,43 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
   <meta charset="UTF-8">
-  <title>Video.js HLS Player</title>
-
-  <!-- Video.js CSS (from CDN) -->
+  <title>Raadsvergadering Tilburg</title>
   <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
-
-  <!-- Style for layout -->
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 2em;
-      background: #f8f8f8;
-      font-family: sans-serif;
+      background-color: #f4f4f4;
     }
-    .video-container {
-      max-width: 720px;
+    .container {
+      max-width: 900px;
       margin: auto;
+    }
+    .agenda {
+      margin-top: 2em;
+      background: #fff;
+      padding: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .agenda h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+      color: #333;
+    }
+    .agenda-item {
+      margin-bottom: 1.5em;
+    }
+    .agenda-item strong {
+      display: block;
+      color: #222;
+      font-size: 1.1em;
+    }
+    .timestamp {
+      font-style: italic;
+      color: #555;
+    }
+    .bijlage {
+      font-size: 0.95em;
+      margin-top: 0.4em;
+      margin-left: 1.2em;
+    }
+    .bijlage a {
+      display: block;
+      text-decoration: none;
+      color: #007BFF;
+      margin-bottom: 0.3em;
+    }
+    .bijlage a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-<h1>Raadsvergadering: vaststellen Profielschets 'Eigenwijs Tilburg zoekt leider met lef!' 23-06-2025</h1>
-  <div class="video-container">
+  <div class="container">
+    <!-- Video Player -->
     <video
-      id="my-video"
+      id="raadsvergadering"
       class="video-js vjs-default-skin"
       controls
       preload="auto"
-      width="720"
-      height="400"
-      data-setup='{}'
+      width="900"
+      height="506"
+      data-setup="{}"
     >
       <source src="https://wowza11.notubiz.nl/nbrepeater/mp4:S_01-TILBURG-RAA-FYSIEK/playlist.m3u8" type="application/x-mpegURL" />
-      Your browser does not support the video tag.
+      Je browser ondersteunt geen video.
     </video>
+
+    <!-- Agenda -->
+    <div class="agenda">
+      <h2>Agenda van de vergadering</h2>
+
+      <div class="agenda-item">
+        <strong>1. Opening vergadering</strong>
+      </div>
+
+      <div class="agenda-item">
+        <strong>2. Vaststellen van de agenda</strong>
+      </div>
+
+      <div class="agenda-item">
+        <strong>3. Toelichting op de profielschets door de heer Van Tilborg</strong>
+      </div>
+
+      <div class="agenda-item">
+        <strong>4. Raadsvoorstel Profielschets 'Eigenwijs Tilburg zoekt leider met lef!'</strong>
+        <div class="bijlage">
+          📎 Bijlagen:
+          <a href="#" target="_blank">Raadsvoorstel Profielschets Eigenwijs Tilburg zoekt leider met lef 2025.pdf</a>
+          <a href="#" target="_blank">DEF Profielschets-burgemeester-small.pdf</a>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <strong>5. Raadsvoorstel Verordening op de vertrouwenscommissie</strong>
+        <div class="bijlage">
+          📎 Bijlage:
+          <a href="#" target="_blank">Raadsvoorstel Verordening op de Vertrouwenscommissie benoeming burgemeester gemeente Tilburg 2025.pdf</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Video.js JavaScript (from CDN) -->
   <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
 </body>
 </html>
